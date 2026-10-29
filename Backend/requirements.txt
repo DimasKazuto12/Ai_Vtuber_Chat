@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+openai
+edge-tts
+python-dotenv
+httpx

@@ -1,0 +1,44 @@
+# ==========================================
+# Environment Variables (WAJIB DITAMBAHKAN)
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# Tetap izinkan .env.example agar bisa jadi dokumentasi
+!.env.example
+
+# ==========================================
+# Logs (Bawaan Vite)
+# ==========================================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==========================================
+# Dependencies & Build (Bawaan Vite)
+# ==========================================
+node_modules
+dist
+dist-ssr
+*.local
+
+# ==========================================
+# Editor directories and files (Bawaan Vite)
+# ==========================================
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
