@@ -3,7 +3,7 @@
   "services": {
     "backend": {
       "root": "Backend",
-      "entrypoint": "index:app"
+      "entrypoint": "app/main.py"
     },
     "frontend": {
       "root": "Frontend",
