@@ -13,7 +13,7 @@ from .tts import LABELS, available, default_provider, synthesize, trim_segments
 logger = logging.getLogger("vtuber")
 app = FastAPI()
 
-origins = os.getenv("ALLOWED_ORIGINS").split(",")
+origins = os.getenv("ALLOWED_ORIGINS", "*").split(",")
 app.add_middleware(
     CORSMiddleware, allow_origins=origins, allow_methods=["*"], allow_headers=["*"]
 )
@@ -30,7 +30,7 @@ class ChatRequest(BaseModel):
     voice: str | None = None
 
 
-@app.get("/voices")
+@app.get("/api/voices")
 async def voices():
     return {
         "default": default_provider(),
@@ -38,7 +38,7 @@ async def voices():
     }
 
 
-@app.post("/chat")
+@app.post("/api/chat")
 async def chat(req: ChatRequest):
     history = [t.model_dump() for t in req.history]
 
